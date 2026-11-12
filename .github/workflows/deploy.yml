@@ -8,8 +8,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  # TODO C1: run on every push to the main branch, and also by hand
-  # (workflow_dispatch:).
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -25,6 +26,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: BRAGA-UNIT8_EXERCISE/braga_unit8_exercise
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
@@ -48,7 +52,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: BRAGA-UNIT8_EXERCISE/braga_unit8_exercise/build/web
 
   deploy:
     needs: build
