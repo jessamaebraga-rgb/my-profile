@@ -676,17 +676,18 @@ class _PickDetailScreenState extends State<PickDetailScreen> {
                   Align(
                     alignment: Alignment.center,
                     child: Image.network(
-                      image,
-                      height: 250,
-                      width: 170,
-                      fit: BoxFit.contain,
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Icon(
-                          Icons.image_not_supported,
-                          size: 100,
-                        );
-                      },
-                    ),
+                    image,
+                    height: 250,
+                    width: 170,
+                    fit: BoxFit.contain,
+                    webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Icon(
+                        Icons.image_not_supported,
+                        size: 100,
+                      );
+                    },
+                  ),
                   )
                 else
                   const Align(
@@ -1505,6 +1506,7 @@ class _BooksTabState extends State<BooksTab> {
                               width: 50,
                               height: 70,
                               fit: BoxFit.cover,
+                              webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
                               errorBuilder: (context, error, stackTrace) {
                                 return const Icon(Icons.book, size: 40);
                               },
@@ -1660,6 +1662,7 @@ class _MoviesTabState extends State<MoviesTab> {
                               width: 50,
                               height: 70,
                               fit: BoxFit.cover,
+                              webHtmlElementStrategy: WebHtmlElementStrategy.fallback,
                               errorBuilder:
                                   (context, error, stackTrace) {
                                 return const Icon(
