@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Braga Unit 7 Exercise',
+      title: "Jessa Mae's Profile",
       theme: ThemeData(
         colorSchemeSeed: const Color.fromARGB(255, 87, 169, 91)
       ),
