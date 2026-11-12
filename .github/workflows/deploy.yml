@@ -49,6 +49,8 @@ jobs:
             --base-href "/${{ github.event.repository.name }}/"
             --dart-define=OMDB_KEY=${{ secrets.OMDB_KEY }}
             --dart-define=CMS_URL=${{ vars.CMS_URL }}
+            --dart-define=CONTENTFUL_SPACE_ID=${{ vars.CONTENTFUL_SPACE_ID }}
+            --dart-define=CONTENTFUL_DELIVERY_TOKEN=${{ secrets.CONTENTFUL_DELIVERY_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
